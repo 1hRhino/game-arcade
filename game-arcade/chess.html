@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chess — Game Arcade</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="index.html" class="logo">🎮 Game Arcade</a>
+    <nav><a href="home.html">Home</a><a href="#">My Games</a></nav>
+  </header>
+  <main class="game-page">
+    <a href="home.html">← Back to games</a>
+    <h2>Chess — 2 Players</h2>
+    <p id="status">White's turn — click a piece, then a highlighted square</p>
+    <div class="chess-board" id="board"></div>
+    <button id="restart" class="btn primary">Restart Game</button>
+    <p id="history-note" class="note"></p>
+    <p class="note">Simple rules for month one: pawns, knights, rooks, bishops, queens and king all move. Capture the king to win. No check, castling, or en passant yet.</p>
+  </main>
+  <script src="chess.js"></script>
+</body>
+</html>

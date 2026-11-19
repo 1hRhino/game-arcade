@@ -120,3 +120,42 @@ a { color: #00e5ff; text-decoration: none; }
 }
 .connect-cell.red { background: #ff4444; }
 .connect-cell.yellow { background: #ffcc00; }
+
+/* Puzzle */
+.puzzle-board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 8px;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+.puzzle-tile {
+  width: 100px; height: 100px;
+  background: #00e5ff; color: #111;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px; font-weight: bold;
+  border-radius: 10px; cursor: pointer;
+}
+.puzzle-tile.blank { background: #171a36; cursor: default; }
+
+/* Chess */
+.chess-board {
+  display: grid;
+  grid-template-columns: repeat(8, 56px);
+  gap: 0;
+  justify-content: center;
+  margin: 0 auto 20px;
+  border: 2px solid #2a2e55;
+  width: fit-content;
+}
+.chess-cell {
+  width: 56px; height: 56px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px; cursor: pointer;
+}
+.chess-cell.light { background: #e8e8e8; }
+.chess-cell.dark { background: #6b7a99; }
+.chess-cell.white-piece { color: #ffffff; text-shadow: 0 0 3px #000; }
+.chess-cell.black-piece { color: #111111; }
+.chess-cell.selected { outline: 3px solid #ffcc00; outline-offset: -3px; }
+.chess-cell.legal { outline: 3px solid #00e5ff; outline-offset: -3px; }

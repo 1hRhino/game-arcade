@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle — Game Arcade</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="index.html" class="logo">🎮 Game Arcade</a>
+    <nav><a href="home.html">Home</a><a href="#">My Games</a></nav>
+  </header>
+  <main class="game-page">
+    <a href="home.html">← Back to games</a>
+    <h2>Sliding Puzzle</h2>
+    <p id="status">Click a tile next to the empty space to slide it. Get 1-8 in order.</p>
+    <p>Moves: <span id="moves">0</span> &nbsp;|&nbsp; Time: <span id="time">0</span>s</p>
+    <div class="puzzle-board" id="board"></div>
+    <button id="restart" class="btn primary">Shuffle / Restart</button>
+    <p id="history-note" class="note"></p>
+  </main>
+  <script src="puzzle.js"></script>
+</body>
+</html>
