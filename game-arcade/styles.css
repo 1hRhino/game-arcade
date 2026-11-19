@@ -159,3 +159,9 @@ a { color: #00e5ff; text-decoration: none; }
 .chess-cell.black-piece { color: #111111; }
 .chess-cell.selected { outline: 3px solid #ffcc00; outline-offset: -3px; }
 .chess-cell.legal { outline: 3px solid #00e5ff; outline-offset: -3px; }
+
+.mode-picker { background: #171a36; border: 1px solid #2a2e55; border-radius: 12px; padding: 16px; margin-bottom: 20px; }
+.mode-picker p { margin-bottom: 10px; }
+.mode-picker .btn { margin: 4px; }
+.btn.difficulty.active { background: #ffcc00; color: #111; }
+

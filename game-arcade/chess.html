@@ -14,6 +14,18 @@
   <main class="game-page">
     <a href="home.html">← Back to games</a>
     <h2>Chess — 2 Players</h2>
+    <div class="mode-picker">
+  <p>Who are you playing?</p>
+  <button id="mode-friend" class="btn primary">Play with a Friend</button>
+  <button id="mode-computer" class="btn primary">Play with Computer</button>
+  <div id="difficulty-picker" style="display:none; margin-top:12px;">
+    <p>Computer level:</p>
+    <button class="btn difficulty" data-diff="easy">Easy</button>
+    <button class="btn difficulty" data-diff="medium">Medium</button>
+    <button class="btn difficulty" data-diff="hard">Hard</button>
+  </div>
+  <p id="mode-label" class="note">Mode: Play with a Friend</p>
+</div>
     <p id="status">White's turn — click a piece, then a highlighted square</p>
     <div class="chess-board" id="board"></div>
     <button id="restart" class="btn primary">Restart Game</button>
