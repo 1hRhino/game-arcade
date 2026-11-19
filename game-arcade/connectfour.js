@@ -19,7 +19,11 @@ function createBoard() {
     const cell = document.createElement('div');
     cell.className = 'connect-cell';
     cell.dataset.row = r; cell.dataset.col = c;
-    cell.addEventListener('click', () => dropDisc(c));
+    cell.addEventListener('click', () => {
+      if (mode === 'computer' && currentPlayer === 'yellow') return;
+      dropDisc(c);
+    });
+
     boardEl.appendChild(cell);
   }
 }
@@ -135,7 +139,6 @@ function getComputerCol() {
 }
 function dropDisc(col) {
   if (!gameActive) return;
-  if (mode === 'computer' && currentPlayer === 'yellow') return;
   const row = nextRow(board, col);
   if (row === -1) return;
   board[row][col] = currentPlayer;
