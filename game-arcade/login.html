@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In — Game Arcade</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="welcome">
+    <h1>🎮 Log In</h1>
+    <p class="tagline">Welcome back.</p>
+    <form id="login-form" class="auth-form">
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <p id="error" class="error"></p>
+      <button type="submit" class="btn primary">Log In</button>
+    </form>
+    <p class="note">No account yet? <a href="signup.html">Sign up</a><br>
+    <a href="index.html">← Back</a></p>
+  </main>
+  <script>
+    document.getElementById('login-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const error = document.getElementById('error');
+      const saved = JSON.parse(localStorage.getItem('gameArcadeUser') || 'null');
+      if (!saved || saved.email !== email) { error.textContent = 'No account found for that email. Try signing up.'; return; }
+      if (saved.password !== password) { error.textContent = 'Wrong password. Try again.'; return; }
+      localStorage.setItem('gameArcadeSession', JSON.stringify({ name: saved.name, email: saved.email }));
+      window.location.href = 'home.html';
+    });
+  </script>
+</body>
+</html>

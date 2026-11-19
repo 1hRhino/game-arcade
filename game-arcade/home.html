@@ -11,7 +11,7 @@
     <a href="index.html" class="logo">🎮 Game Arcade</a>
     <nav>
       <a href="home.html">Home</a>
-      <a href="#">My Games</a>
+      <a href="my-games.html">My Games</a>
     </nav>
   </header>
 
@@ -49,5 +49,22 @@
       </div>
     </div>
   </main>
+
+  <script>
+  const banner = document.getElementById('user-banner');
+  const session = JSON.parse(localStorage.getItem('gameArcadeSession') || 'null');
+  if (session) {
+    banner.innerHTML = `Welcome back, ${session.name} — <a href="my-games.html">see My Games</a> | <a href="#" id="logout">Log out</a>`;
+    document.getElementById('logout').addEventListener('click', (e) => {
+      e.preventDefault();
+      localStorage.removeItem('gameArcadeSession');
+      window.location.href = 'index.html';
+    });
+  } else {
+    banner.innerHTML = 'Playing as guest — <a href="index.html">sign up to save your history</a>.';
+  }
+</script>
+
+
 </body>
 </html>

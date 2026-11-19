@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — Game Arcade</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="welcome">
+    <h1>🎮 Sign Up</h1>
+    <p class="tagline">Create an account to save your games.</p>
+    <form id="signup-form" class="auth-form">
+      <input type="text" id="name" placeholder="Display name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="password" id="password" placeholder="Password (at least 6 characters)" required>
+      <p id="error" class="error"></p>
+      <button type="submit" class="btn primary">Create Account</button>
+    </form>
+    <p class="note">Already have an account? <a href="login.html">Log in</a><br>
+    <a href="index.html">← Back</a></p>
+  </main>
+  <script>
+    document.getElementById('signup-form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const error = document.getElementById('error');
+      if (!name) { error.textContent = 'Please enter a display name.'; return; }
+      if (!email.includes('@')) { error.textContent = 'Please enter a valid email.'; return; }
+      if (password.length < 6) { error.textContent = 'Password must be at least 6 characters.'; return; }
+      // Browser-only for Week 1 — real hashed passwords come in Week 2
+      localStorage.setItem('gameArcadeUser', JSON.stringify({ name, email, password }));
+      localStorage.setItem('gameArcadeSession', JSON.stringify({ name, email }));
+      window.location.href = 'home.html';
+    });
+  </script>
+</body>
+</html>
