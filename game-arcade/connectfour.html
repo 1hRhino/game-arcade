@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connect Four — Game Arcade</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="index.html" class="logo">🎮 Game Arcade</a>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="#">My Games</a>
+    </nav>
+  </header>
+
+  <main class="game-page">
+    <a href="home.html">← Back to games</a>
+    <h2>Connect Four</h2>
+    <p id="status">Red's turn — click a column to drop a disc</p>
+
+    <div class="connect-board" id="board"></div>
+
+    <button id="restart" class="btn primary">Restart Game</button>
+    <p id="history-note" class="note"></p>
+  </main>
+
+  <script src="connectfour.js"></script>
+</body>
+</html>

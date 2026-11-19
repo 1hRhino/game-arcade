@@ -98,3 +98,25 @@ a { color: #00e5ff; text-decoration: none; }
 }
 .cell:hover { background: #1f2347; }
 #restart { margin-bottom: 16px; }
+
+.connect-board {
+  display: grid;
+  grid-template-columns: repeat(7, 60px);
+  gap: 8px;
+  justify-content: center;
+  background: #171a36;
+  border: 1px solid #2a2e55;
+  border-radius: 12px;
+  padding: 16px;
+  margin: 0 auto 20px;
+  width: fit-content;
+}
+.connect-cell {
+  width: 60px;
+  height: 60px;
+  background: #0f1226;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.connect-cell.red { background: #ff4444; }
+.connect-cell.yellow { background: #ffcc00; }
